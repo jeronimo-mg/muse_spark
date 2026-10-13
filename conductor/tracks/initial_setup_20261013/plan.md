@@ -2,7 +2,7 @@
 
 ## Phase 1: Diagnóstico e Verificação de Pré-requisitos
 - [x] Task: Criar script de diagnóstico de sistema `scripts/check-prerequisites.ps1` [27227dd]
-- [ ] Task: Adicionar testes de validação para o diagnóstico de pré-requisitos
+- [x] Task: Adicionar testes de validação para o diagnóstico de pré-requisitos [f576918]
 
 ## Phase 2: Automação da Instalação do Muse Code CLI no WSL2
 - [ ] Task: Desenvolver o script de instalação para Linux/WSL2 `scripts/setup-wsl-muse.sh`
