@@ -4,12 +4,12 @@
 - [x] Task: Criar script de diagnóstico de sistema `scripts/check-prerequisites.ps1` [27227dd]
 - [x] Task: Adicionar testes de validação para o diagnóstico de pré-requisitos [f576918]
 
-## Phase 2: Automação da Instalação do OpenCode CLI (Nativo Windows)
+## Phase 2: Automação da Instalação do OpenCode CLI (Nativo Windows) [checkpoint: 38f9cd2]
 - [x] Task: Criar script de instalação do OpenCode CLI `scripts/install-opencode.ps1` [5141849]
 - [x] Task: Executar instalação do `opencode-ai` e validar versão [5141849]
 
 ## Phase 3: Configuração do Muse Spark e Scripts de Vibe Coding
-- [ ] Task: Criar script de inicialização `scripts/start-vibe.ps1` e wrapper `bin/vibe.cmd`
+- [x] Task: Criar script de inicialização `scripts/start-vibe.ps1` e wrapper `bin/vibe.cmd` [86169b3]
 - [ ] Task: Configurar instruções e perfis para conexão com Muse Spark (sem custos)
 
 ## Phase 4: Suíte de Validação Final e Documentação
