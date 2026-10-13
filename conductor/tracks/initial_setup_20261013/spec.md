@@ -1,28 +1,24 @@
-# Specification: Configuração do Ambiente e Instalação do Muse Spark / Muse Code para Vibe Coding
+# Specification: Configuração do Ambiente OpenCode com Muse Spark (Sem Custos)
 
 ## Overview
-Esta trilha estabelece a infraestrutura e os scripts necessários para instalar, configurar e validar o ambiente de desenvolvimento orientado a agentes usando o **Muse Spark** e a **Muse Code CLI** no Windows (com integração transparente ao WSL2).
+Esta trilha estabelece o ambiente e os scripts necessários para instalar e configurar o **OpenCode CLI** com o modelo **Meta Muse Spark** (fornecido sem custos pela plataforma OpenCode) para sessões fluidas de vibe coding no Windows.
 
 ## Objectives
-1. Automatizar a verificação dos requisitos do sistema (WSL2, Git, runtimes Node/Python).
-2. Criar scripts de instalação e provisionamento do `muse` CLI no subsistema Linux com ponte para execução no Windows.
-3. Desenvolver comandos e atalhos de conveniência em PowerShell para inicialização rápida de sessões de "vibe coding".
-4. Implementar testes automatizados de diagnóstico e health check para garantir que o ambiente está 100% operacional.
+1. Validar os pré-requisitos do sistema Windows (Node.js, Git, PowerShell).
+2. Automatizar a instalação global do OpenCode CLI (`opencode-ai`).
+3. Fornecer guia e scripts de conexão ao modelo Muse Spark 1.3 gratuito.
+4. Criar utilitário PowerShell (`scripts/start-vibe.ps1`) para lançar sessões de vibe coding no diretório de trabalho.
+5. Desenvolver testes automatizados de sanidade do ambiente.
 
 ## Functional Requirements
-- **FR-1: Diagnóstico de Pré-requisitos:** Script PowerShell (`scripts/check-prerequisites.ps1`) para checar status do WSL2, conectividade com a internet, presença de Git e configurações de virtualização.
-- **FR-2: Script de Instalação:** Script automatizado (`scripts/install-muse.ps1` e `scripts/setup-wsl-muse.sh`) para instalar o CLI oficial do Muse dentro do WSL2.
-- **FR-3: Script de Wrapper Windows:** Script `muse.cmd` ou função PowerShell para permitir executar `muse` diretamente a partir do terminal do Windows na pasta atual.
-- **FR-4: Gerenciamento de Credenciais/Ambiente:** Guia interativo e script para configuração das variáveis de ambiente e autenticação da Meta.
-- **FR-5: Suíte de Testes & Sanity Check:** Script de testes (`tests/test-environment.ps1`) que valida a instalação da CLI, versão e conectividade.
-
-## Non-Functional Requirements
-- **NFR-1:** Execução idempotente (pode ser executada múltiplas vezes sem quebrar o estado).
-- **NFR-2:** Mensagens informativas claras em português, com indicação visual de sucesso/aviso/erro.
-- **NFR-3:** Sem dependência de privilégios de administrador após o WSL estar ativo.
+- **FR-1: Diagnóstico de Pré-requisitos:** Validar Node.js >= 20, npm, Git e conectividade com o registro npm / OpenCode.
+- **FR-2: Instalação Automatizada:** Script PowerShell (`scripts/install-opencode.ps1`) que instala ou atualiza o `opencode-ai`.
+- **FR-3: Script de Inicialização da Sessão:** Script (`scripts/start-vibe.ps1`) e comando wrapper (`bin/vibe.cmd`) para inicializar o OpenCode com Muse Spark diretamente no projeto.
+- **FR-4: Configuração de Modelo:** Documentação e automação de configuração inicial do modelo Muse Spark (via `/connect` ou arquivo de configuração do OpenCode).
+- **FR-5: Suíte de Validação:** Testes automatizados (`tests/test-environment.ps1`) validando a integridade da instalação do CLI e comandos.
 
 ## Acceptance Criteria
-- [ ] O script de pré-requisitos detecta e reporta com precisão o status do sistema.
-- [ ] O Muse Code CLI é instalado e reporta versão funcional (`muse --version`).
-- [ ] É possível invocar o comando do Muse a partir do PowerShell apontando para o diretório de trabalho atual.
-- [ ] A suíte de verificação passa com sucesso.
+- [ ] O script de pré-requisitos confirma os componentes essenciais (Node.js, npm, Git).
+- [ ] O OpenCode CLI está instalado e responde no terminal (`opencode --version`).
+- [ ] Os scripts de inicialização de vibe coding estão prontos e documentados.
+- [ ] A suíte de testes passa com 100% de sucesso.

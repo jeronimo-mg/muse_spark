@@ -1,25 +1,21 @@
-# Product Definition: Muse Spark Vibe Coding Setup
+# Product Definition: Muse Spark Vibe Coding Setup (via OpenCode)
 
 # Initial Concept
-Instalação do muse spark neste computador para escrita de código (vibe coding).
+Instalação do muse spark neste computador para escrita de código (vibe coding), utilizando a versão disponibilizada pelo OpenCode (sem custos).
 
 ## Vision & Overview
-O **Muse Spark Vibe Coding Environment** é um ecossistema configurado e automatizado para transformar esta estação de trabalho em uma central de desenvolvimento de alta velocidade orientada a agentes ("vibe coding"). O projeto engloba a instalação, validação de pré-requisitos, configuração de ambiente (Windows/WSL2, Node/Python, CLI), templates de workspace e scripts utilitários para orquestração fluida do modelo de raciocínio Muse Spark e seu agente CLI.
+O **Muse Spark Vibe Coding Environment** fornece um ambiente de desenvolvimento de software autônomo e de alta velocidade ("vibe coding") no Windows. Ele integra o **OpenCode CLI** com o modelo de raciocínio de código **Meta Muse Spark** (versão 1.3 gratuita disponibilizada no OpenCode), permitindo criar projetos, decompor tarefas complexas e codificar interativamente sem custos de API ou atrito de configuração.
 
 ## Target Audience
-- Desenvolvedores que utilizam a abordagem de **vibe coding** (direção arquitetural via prompts e supervisão de agentes autônomos).
-- Usuários que buscam um ambiente estável no Windows com suporte a subagentes paralelos, janelas de contexto amplas e execução direta no terminal.
+- Desenvolvedores que praticam **vibe coding** através de prompts em linguagem natural e agentes autônomos.
+- Usuários no Windows que desejam utilizar o **Muse Spark** sem custos por meio da integração oficial do OpenCode.
 
 ## Key Features & Capabilities
-1. **Verificação & Diagnóstico de Pré-requisitos:**
-   - Detecção e preparação de WSL2, PowerShell, curl, Node.js e Python.
-   - Validação de conectividade com a API da Meta / repositórios do Muse.
-2. **Instalação Automatizada & Configuração do Muse CLI:**
-   - Instalação oficial do cliente `muse` CLI no subsistema Linux / scripts de ponte para Windows.
-   - Guia e fluxo assistido de autenticação e credenciais.
-3. **Workspace de Vibe Coding & Ferramentas:**
-   - Scripts de inicialização rápida (`start-muse`, `vibe-session`).
-   - Integração com editores de código (VS Code / extensões).
-   - Suporte a worktrees Git e logs de subagentes.
-4. **Testes de Sanidade & Health Check:**
-   - Validação de que a CLI está respondendo, modelos configurados e subagentes operacionais.
+1. **Instalação Nativa do OpenCode CLI:**
+   - Instalação automatizada via npm (`opencode-ai`) para Windows nativo.
+2. **Integração com Muse Spark (Sem Custos):**
+   - Configuração de perfil e conexão com o modelo Meta Muse Spark 1.3 no OpenCode.
+3. **Scripts de Inicialização e Vibe Coding:**
+   - Scripts de conveniência em PowerShell (`scripts/start-vibe.ps1`) para iniciar a sessão com o Muse Spark pré-selecionado na pasta do projeto.
+4. **Health Check & Testes de Sanidade:**
+   - Validação contínua do ambiente, conectividade e disponibilidade do agente.
