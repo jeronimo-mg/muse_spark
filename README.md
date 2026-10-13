@@ -6,39 +6,38 @@ Ambiente configurado para **vibe coding** nativo no Windows utilizando o modelo 
 
 ## 🚀 Como Iniciar uma Sessão de Vibe Coding
 
-Você pode iniciar o agente de desenvolvimento de três formas práticas:
+Graças à configuração global no sistema, você agora pode abrir **qualquer terminal (PowerShell ou Prompt de Comando)** em **qualquer pasta** do computador e rodar diretamente:
 
-### Opção 1: Via Launcher Rápido (Recomendado)
-No terminal (CMD ou PowerShell) na raiz do projeto:
-```cmd
-bin\vibe.cmd
-```
-Ou no PowerShell:
-```powershell
-.\bin\vibe.cmd
-```
-
-### Opção 2: Via Script PowerShell com Parâmetros
-O script `scripts/start-vibe.ps1` permite customizar a sessão:
-```powershell
-# Sessão padrão com Muse Spark
-powershell.exe -ExecutionPolicy Bypass -File .\scripts\start-vibe.ps1
-
-# Sessão com auto-aprovação de comandos (--auto)
-powershell.exe -ExecutionPolicy Bypass -File .\scripts\start-vibe.ps1 -Auto
-
-# Sessão com interface minimalista (--mini)
-powershell.exe -ExecutionPolicy Bypass -File .\scripts\start-vibe.ps1 -Mini
-
-# Execução direta com prompt inicial
-powershell.exe -ExecutionPolicy Bypass -File .\scripts\start-vibe.ps1 -Prompt "Crie uma API REST em Node.js com Express"
-```
-
-### Opção 3: Diretamente pelo OpenCode CLI
-Como o arquivo `opencode.json` na raiz do projeto já define o modelo `opencode/muse-spark-1.3-contributor-free`, basta rodar:
 ```bash
-opencode
+vibe
 ```
+ou:
+```bash
+muse
+```
+
+O comando inicia automaticamente o agente com o **Meta Muse Spark** (`opencode/muse-spark-1.3-contributor-free`) e ativa a ponte local de proxy para contornar qualquer bloqueio corporativo.
+
+### Exemplos de Uso Global (em qualquer pasta):
+
+```bash
+# Iniciar sessão interativa de vibe coding na pasta atual
+vibe
+
+# Iniciar diretamente com uma instrução
+vibe "crie um servidor HTTP em Node.js com TypeScript"
+
+# Iniciar com permissões automáticas (YOLO / auto-approve)
+vibe --auto
+
+# Iniciar interface visual no navegador
+vibe web
+
+# Listar os modelos disponíveis
+vibe models opencode
+```
+
+> **Nota:** Se você preferir rodar `opencode` diretamente, ele também foi integrado à ponte de proxy automaticamente.
 
 > **Dica Visual (Web UI):** Se preferir interagir via navegador, você pode iniciar o servidor web do OpenCode executando:
 > ```bash
