@@ -12,6 +12,6 @@
 - [x] Task: Criar script de inicialização `scripts/start-vibe.ps1` e wrapper `bin/vibe.cmd` [86169b3]
 - [x] Task: Configurar instruções e perfis para conexão com Muse Spark (sem custos) [066eca2]
 
-## Phase 4: Suíte de Validação Final e Documentação
+## Phase 4: Suíte de Validação Final e Documentação [checkpoint: 73bddf4]
 - [x] Task: Implementar suíte de testes automatizados `tests/test-environment.ps1` [4248d49]
-- [ ] Task: Criar `README.md` com guia prático de vibe coding
+- [x] Task: Criar `README.md` com guia prático de vibe coding [73bddf4]
