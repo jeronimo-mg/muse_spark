@@ -49,6 +49,32 @@ Write-Host "Modelo  : $Model" -ForegroundColor Green
 if ($Auto) { Write-Host "Modo    : Auto-approve ativo (--auto)" -ForegroundColor Yellow }
 if ($Mini) { Write-Host "UI      : Interface minimalista (--mini)" -ForegroundColor Gray }
 
+# 1.5 Gerenciar Proxy Bridge para contornar CTIM-BLQ-AutenticacaoNecessaria (HTTP 407)
+$bridgeScript = Join-Path $PSScriptRoot "proxy-bridge.js"
+$bridgePort = 8089
+$bridgeActive = $false
+try {
+    $tcpClient = New-Object System.Net.Sockets.TcpClient
+    $async = $tcpClient.BeginConnect("127.0.0.1", $bridgePort, $null, $null)
+    $success = $async.AsyncWaitHandle.WaitOne(300, $false)
+    if ($success -and $tcpClient.Connected) {
+        $bridgeActive = $true
+    }
+    $tcpClient.Close()
+} catch {}
+
+if (-not $bridgeActive -and (Test-Path $bridgeScript)) {
+    Write-Host "Iniciando Proxy Bridge para autenticacao corporativa..." -ForegroundColor Gray
+    Start-Process -FilePath "node.exe" -ArgumentList "`"$bridgeScript`"" -WindowStyle Hidden
+    Start-Sleep -Milliseconds 800
+}
+
+$env:HTTP_PROXY = "http://127.0.0.1:$bridgePort"
+$env:HTTPS_PROXY = "http://127.0.0.1:$bridgePort"
+$env:http_proxy = "http://127.0.0.1:$bridgePort"
+$env:https_proxy = "http://127.0.0.1:$bridgePort"
+$env:NODE_TLS_REJECT_UNAUTHORIZED = "0"
+
 # 2. Montar argumentos
 $argList = @()
 $argList += "-m"
