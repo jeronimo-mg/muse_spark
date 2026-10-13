@@ -1,7 +1,7 @@
 # Implementation Plan: Configuração do Ambiente e Instalação do Muse Spark / Muse Code para Vibe Coding
 
 ## Phase 1: Diagnóstico e Verificação de Pré-requisitos
-- [ ] Task: Criar script de diagnóstico de sistema `scripts/check-prerequisites.ps1`
+- [x] Task: Criar script de diagnóstico de sistema `scripts/check-prerequisites.ps1` [27227dd]
 - [ ] Task: Adicionar testes de validação para o diagnóstico de pré-requisitos
 
 ## Phase 2: Automação da Instalação do Muse Code CLI no WSL2
