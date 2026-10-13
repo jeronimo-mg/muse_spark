@@ -6,7 +6,7 @@
 
 ## Phase 2: Automação da Instalação do OpenCode CLI (Nativo Windows)
 - [x] Task: Criar script de instalação do OpenCode CLI `scripts/install-opencode.ps1` [5141849]
-- [ ] Task: Executar instalação do `opencode-ai` e validar versão
+- [x] Task: Executar instalação do `opencode-ai` e validar versão [5141849]
 
 ## Phase 3: Configuração do Muse Spark e Scripts de Vibe Coding
 - [ ] Task: Criar script de inicialização `scripts/start-vibe.ps1` e wrapper `bin/vibe.cmd`
